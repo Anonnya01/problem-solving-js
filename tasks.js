@@ -139,3 +139,49 @@
 // console.log(result);
 
 // ---------exit------- //
+
+// -------------problem 04-----------//
+
+// function validProposal(person1, person2) {
+//   if (typeof person1 !== "object" || typeof person2 !== "object") {
+//     return "Invalid";
+//   }
+
+//   if (person1.gender == person2.gender) {
+//     return false;
+//   } else if (Math.abs(person1.age - person2.age) > 7) {
+//     return false;
+//   } else return true;
+// }
+// console.log(
+//   validProposal(
+//     { name: "mim ", gender: "female", age: 37 },
+//     { name: "bjoy", gender: "male", age: 32 }
+//   )
+// );
+
+// -------exit---//
+
+// --------time--------//
+
+function calculateSleepTime(times) {
+  sum = 0;
+  for (let time of times) {
+    if (typeof time !== "number") {
+      return "Invalid";
+    }
+    sum += time;
+  }
+
+  let seconds = sum;
+  let hour = Math.floor(seconds / 3600);
+  seconds = seconds % 3600;
+  let min = Math.floor(seconds / 60);
+  seconds = seconds % 60;
+
+  let finalTime ={Hour: hour,Minute: min,Second: seconds}
+  return finalTime;
+}
+
+const result = calculateSleepTime([2,500,400])
+console.log(result);
